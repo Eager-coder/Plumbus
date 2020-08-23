@@ -14,6 +14,7 @@
 		87C8367624F2826F00E32EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C8367524F2826F00E32EE6 /* Assets.xcassets */; };
 		87C8367924F2826F00E32EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C8367724F2826F00E32EE6 /* LaunchScreen.storyboard */; };
 		87C8368224F2832100E32EE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87C8368124F2832100E32EE6 /* GoogleService-Info.plist */; };
+		A35EDCA7ADA213360BCC461F /* Pods_Plumbus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54B25DC4B81BFD1673434E /* Pods_Plumbus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		87C8367824F2826F00E32EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C8367A24F2826F00E32EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C8368124F2832100E32EE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F052855FADCDFD96A439518 /* Pods-Plumbus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plumbus.release.xcconfig"; path = "Target Support Files/Pods-Plumbus/Pods-Plumbus.release.xcconfig"; sourceTree = "<group>"; };
+		9F54B25DC4B81BFD1673434E /* Pods_Plumbus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plumbus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10B222F2A51DAC6B05C2294 /* Pods-Plumbus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plumbus.debug.xcconfig"; path = "Target Support Files/Pods-Plumbus/Pods-Plumbus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35EDCA7ADA213360BCC461F /* Pods_Plumbus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38DE6FC2ED02B67D76CDCCD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F54B25DC4B81BFD1673434E /* Pods_Plumbus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C5AD43901CE57664D349653 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B10B222F2A51DAC6B05C2294 /* Pods-Plumbus.debug.xcconfig */,
+				9F052855FADCDFD96A439518 /* Pods-Plumbus.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		87C8366024F2826D00E32EE6 = {
 			isa = PBXGroup;
 			children = (
 				87C8366B24F2826D00E32EE6 /* Plumbus */,
 				87C8366A24F2826D00E32EE6 /* Products */,
+				5C5AD43901CE57664D349653 /* Pods */,
+				38DE6FC2ED02B67D76CDCCD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87C8367D24F2826F00E32EE6 /* Build configuration list for PBXNativeTarget "Plumbus" */;
 			buildPhases = (
+				AE95D5E948208A266298C97E /* [CP] Check Pods Manifest.lock */,
 				87C8366524F2826D00E32EE6 /* Sources */,
 				87C8366624F2826D00E32EE6 /* Frameworks */,
 				87C8366724F2826D00E32EE6 /* Resources */,
+				4C48F8052C346026E36E1362 /* [CP] Embed Pods Frameworks */,
+				4D6FAB7969EB36DC8E963C4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +164,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C48F8052C346026E36E1362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D6FAB7969EB36DC8E963C4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Plumbus/Pods-Plumbus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE95D5E948208A266298C97E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plumbus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87C8366524F2826D00E32EE6 /* Sources */ = {
@@ -286,11 +373,13 @@
 		};
 		87C8367E24F2826F00E32EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10B222F2A51DAC6B05C2294 /* Pods-Plumbus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSZXX25TGQ;
 				INFOPLIST_FILE = Plumbus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +393,13 @@
 		};
 		87C8367F24F2826F00E32EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F052855FADCDFD96A439518 /* Pods-Plumbus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSZXX25TGQ;
 				INFOPLIST_FILE = Plumbus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

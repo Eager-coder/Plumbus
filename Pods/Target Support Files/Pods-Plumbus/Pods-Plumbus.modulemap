@@ -1,0 +1,6 @@
+framework module Pods_Plumbus {
+  umbrella header "Pods-Plumbus-umbrella.h"
+
+  export *
+  module * { export * }
+}
