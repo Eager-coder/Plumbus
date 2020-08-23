@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>80194389835-ocse5fjgk30fccl9jj5d4t16gnhapasu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.80194389835-ocse5fjgk30fccl9jj5d4t16gnhapasu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAmsN0Ppz-qkRCIzucE2F2rb95NDFl2xro</string>
+	<key>GCM_SENDER_ID</key>
+	<string>80194389835</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Kenes-Industries.Plumbus</string>
+	<key>PROJECT_ID</key>
+	<string>plumbus-6afab</string>
+	<key>STORAGE_BUCKET</key>
+	<string>plumbus-6afab.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:80194389835:ios:2e1e2285b0f8f9e777cace</string>
+	<key>DATABASE_URL</key>
+	<string>https://plumbus-6afab.firebaseio.com</string>
+</dict>
+</plist>
