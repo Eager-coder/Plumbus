@@ -3,27 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A0525524F2923E00E6812A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0525424F2923E00E6812A /* AuthViewController.swift */; };
+		87A0525B24F3A37B00E6812A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0525A24F3A37B00E6812A /* UIColor+Extension.swift */; };
+		87A0526024F3F06700E6812A /* universaljack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87A0525D24F3ED6A00E6812A /* universaljack.ttf */; };
+		87A0526224F3F58D00E6812A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A0526124F3F58D00E6812A /* Assets.xcassets */; };
 		87C8366D24F2826D00E32EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8366C24F2826D00E32EE6 /* AppDelegate.swift */; };
 		87C8366F24F2826D00E32EE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8366E24F2826D00E32EE6 /* SceneDelegate.swift */; };
 		87C8367124F2826D00E32EE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8367024F2826D00E32EE6 /* ViewController.swift */; };
 		87C8367424F2826D00E32EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C8367224F2826D00E32EE6 /* Main.storyboard */; };
-		87C8367624F2826F00E32EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C8367524F2826F00E32EE6 /* Assets.xcassets */; };
 		87C8367924F2826F00E32EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C8367724F2826F00E32EE6 /* LaunchScreen.storyboard */; };
 		87C8368224F2832100E32EE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87C8368124F2832100E32EE6 /* GoogleService-Info.plist */; };
 		A35EDCA7ADA213360BCC461F /* Pods_Plumbus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54B25DC4B81BFD1673434E /* Pods_Plumbus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87A0525424F2923E00E6812A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		87A0525A24F3A37B00E6812A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		87A0525D24F3ED6A00E6812A /* universaljack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = universaljack.ttf; sourceTree = "<group>"; };
+		87A0526124F3F58D00E6812A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C8366924F2826D00E32EE6 /* Plumbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plumbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C8366C24F2826D00E32EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C8366E24F2826D00E32EE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		87C8367024F2826D00E32EE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87C8367324F2826D00E32EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		87C8367524F2826F00E32EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C8367824F2826F00E32EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C8367A24F2826F00E32EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C8368124F2832100E32EE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -58,8 +64,15 @@
 				B10B222F2A51DAC6B05C2294 /* Pods-Plumbus.debug.xcconfig */,
 				9F052855FADCDFD96A439518 /* Pods-Plumbus.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		87A0525F24F3F01900E6812A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				87A0525D24F3ED6A00E6812A /* universaljack.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		87C8366024F2826D00E32EE6 = {
@@ -85,10 +98,13 @@
 			children = (
 				87C8366C24F2826D00E32EE6 /* AppDelegate.swift */,
 				87C8366E24F2826D00E32EE6 /* SceneDelegate.swift */,
+				87A0525424F2923E00E6812A /* AuthViewController.swift */,
+				87A0525F24F3F01900E6812A /* Fonts */,
+				87A0525A24F3A37B00E6812A /* UIColor+Extension.swift */,
 				87C8367024F2826D00E32EE6 /* ViewController.swift */,
 				87C8367224F2826D00E32EE6 /* Main.storyboard */,
-				87C8367524F2826F00E32EE6 /* Assets.xcassets */,
 				87C8367724F2826F00E32EE6 /* LaunchScreen.storyboard */,
+				87A0526124F3F58D00E6812A /* Assets.xcassets */,
 				87C8367A24F2826F00E32EE6 /* Info.plist */,
 				87C8368124F2832100E32EE6 /* GoogleService-Info.plist */,
 			);
@@ -156,10 +172,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A0526024F3F06700E6812A /* universaljack.ttf in Resources */,
 				87C8367924F2826F00E32EE6 /* LaunchScreen.storyboard in Resources */,
 				87C8368224F2832100E32EE6 /* GoogleService-Info.plist in Resources */,
-				87C8367624F2826F00E32EE6 /* Assets.xcassets in Resources */,
 				87C8367424F2826D00E32EE6 /* Main.storyboard in Resources */,
+				87A0526224F3F58D00E6812A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A0525524F2923E00E6812A /* AuthViewController.swift in Sources */,
 				87C8367124F2826D00E32EE6 /* ViewController.swift in Sources */,
 				87C8366D24F2826D00E32EE6 /* AppDelegate.swift in Sources */,
 				87C8366F24F2826D00E32EE6 /* SceneDelegate.swift in Sources */,
+				87A0525B24F3A37B00E6812A /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
