@@ -246,7 +246,6 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: SignUpViewModelDelegate {
     func goToHomePage() {
-        // TODO: change root vc
-        navigationController?.pushViewController(TabBarController(), animated: true)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }

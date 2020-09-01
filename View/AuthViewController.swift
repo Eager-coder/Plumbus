@@ -216,7 +216,6 @@ class AuthViewController: UIViewController{
 
 extension AuthViewController: AuthViewModelDelegate {
     func goToHomePage() {
-        // TODO: change root vc
-        navigationController?.pushViewController(TabBarController(), animated: true)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -25,7 +25,8 @@ class AuthViewModel {
     }
     
     func signInButtonClicked(_ fields: [String]) {
-        Auth.auth().signIn(withEmail: fields[0], password: fields[1]) { (result, error) in
+        Auth.auth().signIn(withEmail: fields[0], password: fields[1]) { [weak self] (result, error) in
+            guard let self = self else { return }
             if let error = error {
                 print("Error in signing in: \(error.localizedDescription)")
             } else {
