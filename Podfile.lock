@@ -280,6 +280,8 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 1.30905.0)
+  - FirebaseFirestoreSwift (0.4.0):
+    - FirebaseFirestore (>= 1.6.1, ~> 1.6)
   - FirebaseInAppMessaging (0.23.0):
     - FirebaseABTesting (~> 4.1)
     - FirebaseCore (~> 6.8)
@@ -371,6 +373,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/InAppMessaging
   - Firebase/Storage
+  - FirebaseFirestoreSwift
   - JGProgressHUD
   - MessageKit
   - SDWebImage (~> 5.0)
@@ -388,6 +391,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseInAppMessaging
     - FirebaseInstallations
     - FirebaseStorage
@@ -417,6 +421,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
   FirebaseDatabase: d85b47213273708e48c972012b39105f76229588
   FirebaseFirestore: ff82cd15f8ed3b417c307eb729e3e2e68aad0bdd
+  FirebaseFirestoreSwift: 2c46dbc1156db97dc4f6dd798d4f5b57b9c7fab6
   FirebaseInAppMessaging: 3b419af4a08aa0e9e79ea7d1cb90dd2f818a1807
   FirebaseInstallations: 45f9d44d3a8d6f780fa337ee8987dad87210fcbc
   FirebaseStorage: 33b92875a9b556824886cc7a65120c7d2cb3a8d8
@@ -435,6 +440,6 @@ SPEC CHECKSUMS:
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: fa43d95e7d84c9dfbedb3d93eb4b28b4cb8e836d
+PODFILE CHECKSUM: c96f885cab36eb33e1956413f92af5b3ecf2ebf3
 
 COCOAPODS: 1.9.3

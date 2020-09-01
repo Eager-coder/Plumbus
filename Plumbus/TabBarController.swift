@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(signOut))
         conversationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
         
         viewControllers = [conversationVC]
@@ -23,13 +23,10 @@ class TabBarController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if FirebaseAuth.Auth.auth().currentUser == nil {
-            let navigationController = UINavigationController(rootViewController: AuthViewController())
-            navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: false  , completion: nil)
-        } else {
-            
-        }
+        guard FirebaseAuth.Auth.auth().currentUser == nil else { return }
+        let navigationController = UINavigationController(rootViewController: AuthViewController())
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: false  , completion: nil)
     }
     
     @objc func signOut() {

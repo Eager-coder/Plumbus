@@ -15,5 +15,6 @@ target 'Plumbus' do
     pod 'SnapKit', '~> 5.0.0'
     pod 'MessageKit'
     pod 'JGProgressHUD'
-    pod 'SDWebImage', '~> 5.0'    
+    pod 'SDWebImage', '~> 5.0'  
+    pod 'FirebaseFirestoreSwift'  
 end

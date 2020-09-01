@@ -8,9 +8,11 @@
 
 import UIKit
 import SnapKit
+import JGProgressHUD
 
 class ConversationViewController: UIViewController {
     private let const: CGFloat = 10
+    private let spinner = JGProgressHUD(style: .dark)
     
     private lazy var collectionViewFlowLayout: UICollectionViewFlowLayout = {
         var temp = UICollectionViewFlowLayout()
@@ -60,12 +62,11 @@ extension ConversationViewController: UICollectionViewDataSource {
         }
     }
     
-    
-}
-
-extension ConversationViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Make Clickable
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let vc = ChatViewController()
+        vc.navigationItem.title = "Kenes Yerassyl"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

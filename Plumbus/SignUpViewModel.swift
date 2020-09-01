@@ -11,6 +11,8 @@ import FirebaseAuth
 
 protocol SignUpViewModelDelegate: class {
     func goToHomePage()
+    func loadingBegin()
+    func loadingEnd()
 }
 
 class SignUpViewModel {
@@ -30,37 +32,23 @@ class SignUpViewModel {
     
     func signUpButtonClicked(_ fields: [String]) {
         
-        let user = User(firstName: fields[0], lastName: fields[1], email: fields[2])
-    
-        DatabaseManager.shared.doesUserExist(withUser: user) { [weak self] (doesExist) in
-            
-            guard let self = self else { return }
-            guard !doesExist else {
-                print("Error: User already exists")
-                return
-            }
-            
-            Auth.auth().createUser(withEmail: fields[2], password: fields[3]) { (result, error) in
+        let user = User(firstName: fields[0], lastName: fields[1], email: fields[2], password: fields[3])
+        delegate?.loadingBegin()
         
-                if let error = error {
-                    print("Error in creating user: \(error.localizedDescription)")
-                } else {
-                    DatabaseManager.shared.insertUser(withUser: user)
-                    
-                    Firestore.firestore().collection("users").addDocument(data: [
-                        "first_name" : fields[0],
-                        "last_name" : fields[1],
-                        "uid" : result!.user.uid
-                    ]) { (error) in
-                        if let error = error {
-                            print("Error in saving user: \(error.localizedDescription)")
-                        } else {
-                            self.delegate?.goToHomePage()
-                        }
-                    }
-                }
-                
+        guard !DatabaseManager.doesUserExist(with: user.email) else {
+            self.delegate?.loadingEnd()
+            print("Error: User already exists")
+            return
+        }
+        Auth.auth().createUser(withEmail: fields[2], password: fields[3]) { [weak self] (result, error) in
+            DispatchQueue.main.async { self?.delegate?.loadingEnd() }
+            if let error = error {
+                print("Error in creating user: \(error.localizedDescription)")
+            } else
+            if result != nil && DatabaseManager.addUser(with: user.email, user: user) {
+                DispatchQueue.main.async { self?.delegate?.goToHomePage() }
             }
         }
     }
+    
 }

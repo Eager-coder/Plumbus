@@ -6,38 +6,31 @@
 //  Copyright © 2020 Kenes Yerassyl. All rights reserved.
 //
 
-import FirebaseDatabase
+
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class DatabaseManager {
     
-    static let shared = DatabaseManager()
-    private let database = Database.database().reference()
+    static let db = Firestore.firestore()
     
-}
-
-extension DatabaseManager {
-    
-    public func insertUser(withUser user: User) {
-        database.child(user.getFormattedEmail()).setValue([
-            "first_name" : user.firstName,
-            "last_name" : user.lastName
-        ])
-    }
-    
-    public func doesUserExist(withUser user: User, completion: @escaping ((Bool) -> Void)) {
-        database.child(user.getFormattedEmail()).observeSingleEvent(of: .value) { (dataSnapshot) in
-            completion((dataSnapshot.value as? String) != nil)
+    static func addUser(with email: String, user: User) -> Bool {
+        do {
+            try db.collection("users").document(email).setData(from: user)
+            return true
+        } catch let error {
+            print("Error in adding user: \(error.localizedDescription)")
         }
+        return false
     }
-}
-
-struct User {
-    let firstName: String
-    let lastName: String
-    let email: String
     
-    func getFormattedEmail() -> String {
-        return email.replacingOccurrences(of: ".", with: "+")
+    static func doesUserExist(with email: String) -> Bool {
+        var result = false
+        db.collection("users").document(email).getDocument { (documentSnapshot, error) in
+            guard let document = documentSnapshot else { result = false; return }
+            result = document.exists
+        }
+        return result
     }
-    // TODO: add other stuff
+    
 }

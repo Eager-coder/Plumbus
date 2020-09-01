@@ -8,13 +8,14 @@
 
 import UIKit
 import SnapKit
+import JGProgressHUD
 
 class AuthViewController: UIViewController{
-    
     private let const: CGFloat = 20.0
     private let authVM = AuthViewModel()
     private let emailTextField = UITextField()
     private let passwordTextField = UITextField()
+    private let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -215,6 +216,14 @@ class AuthViewController: UIViewController{
 }
 
 extension AuthViewController: AuthViewModelDelegate {
+    func loadingBegin() {
+        spinner.show(in: view, animated: true)
+    }
+    
+    func loadingEnd() {
+        spinner.dismiss(animated: true)
+    }
+    
     func goToHomePage() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
