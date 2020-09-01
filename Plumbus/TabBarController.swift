@@ -11,11 +11,14 @@ import FirebaseAuth
 
 class TabBarController: UITabBarController {
     
+    private let conversationVC = ConversationViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        view.backgroundColor = .cyan
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(signOut))
+        
+        conversationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+        
+        viewControllers = [conversationVC]
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,7 +26,7 @@ class TabBarController: UITabBarController {
         if FirebaseAuth.Auth.auth().currentUser == nil {
             let navigationController = UINavigationController(rootViewController: AuthViewController())
             navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: false , completion: nil)
+            present(navigationController, animated: false  , completion: nil)
         } else {
             
         }

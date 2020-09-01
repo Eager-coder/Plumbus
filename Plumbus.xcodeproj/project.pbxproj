@@ -12,6 +12,8 @@
 		8712955524FD150C0071C958 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8712955424FD150C0071C958 /* AuthViewModel.swift */; };
 		8712955824FD298E0071C958 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8712955724FD298E0071C958 /* SignUpViewModel.swift */; };
 		874193DF24FE538200F317E2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874193DE24FE538200F317E2 /* DatabaseManager.swift */; };
+		874193E324FE760400F317E2 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874193E224FE760400F317E2 /* ConversationViewController.swift */; };
+		874193E524FE76A900F317E2 /* ConversationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874193E424FE76A800F317E2 /* ConversationCollectionViewCell.swift */; };
 		876C7BF724FD4706000CC850 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C7BF624FD4706000CC850 /* TabBarController.swift */; };
 		87A0525524F2923E00E6812A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0525424F2923E00E6812A /* AuthViewController.swift */; };
 		87A0525B24F3A37B00E6812A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0525A24F3A37B00E6812A /* UIColor+Extension.swift */; };
@@ -31,6 +33,8 @@
 		8712955424FD150C0071C958 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		8712955724FD298E0071C958 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		874193DE24FE538200F317E2 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		874193E224FE760400F317E2 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		874193E424FE76A800F317E2 /* ConversationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCollectionViewCell.swift; sourceTree = "<group>"; };
 		876C7BF624FD4706000CC850 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		87A0525424F2923E00E6812A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		87A0525A24F3A37B00E6812A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -77,13 +81,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		8712954524FD04830071C958 /* Resoures */ = {
+		8712954524FD04830071C958 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				874193DE24FE538200F317E2 /* DatabaseManager.swift */,
+				87C8366C24F2826D00E32EE6 /* AppDelegate.swift */,
+				87C8366E24F2826D00E32EE6 /* SceneDelegate.swift */,
 				87A0526124F3F58D00E6812A /* Assets.xcassets */,
 				87A0525F24F3F01900E6812A /* Fonts */,
 			);
-			name = Resoures;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		8712954624FD04A20071C958 /* Extensions */ = {
@@ -98,82 +105,53 @@
 		8712954D24FD098A0071C958 /* Auth Page */ = {
 			isa = PBXGroup;
 			children = (
-				8712955324FD14FF0071C958 /* View Model */,
-				8712954E24FD09990071C958 /* View */,
+				8712955424FD150C0071C958 /* AuthViewModel.swift */,
+				87A0525424F2923E00E6812A /* AuthViewController.swift */,
 			);
 			name = "Auth Page";
 			path = ..;
 			sourceTree = "<group>";
 		};
-		8712954E24FD09990071C958 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				87A0525424F2923E00E6812A /* AuthViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8712954F24FD11E20071C958 /* SignUp Page */ = {
 			isa = PBXGroup;
 			children = (
-				8712955624FD16B90071C958 /* View Model */,
-				8712955024FD11F70071C958 /* View */,
+				8712955724FD298E0071C958 /* SignUpViewModel.swift */,
+				8712955124FD12080071C958 /* SignUpViewController.swift */,
 			);
 			name = "SignUp Page";
 			sourceTree = "<group>";
 		};
-		8712955024FD11F70071C958 /* View */ = {
+		874193E024FE73AC00F317E2 /* Conversation Page */ = {
 			isa = PBXGroup;
 			children = (
-				8712955124FD12080071C958 /* SignUpViewController.swift */,
+				874193E224FE760400F317E2 /* ConversationViewController.swift */,
+				874193E424FE76A800F317E2 /* ConversationCollectionViewCell.swift */,
 			);
-			name = View;
+			name = "Conversation Page";
 			sourceTree = "<group>";
 		};
-		8712955324FD14FF0071C958 /* View Model */ = {
+		874193E124FE75AA00F317E2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				8712955424FD150C0071C958 /* AuthViewModel.swift */,
+				87C8367224F2826D00E32EE6 /* Main.storyboard */,
+				87C8367724F2826F00E32EE6 /* LaunchScreen.storyboard */,
 			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		8712955624FD16B90071C958 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				8712955724FD298E0071C958 /* SignUpViewModel.swift */,
-			);
-			name = "View Model";
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		876C7BF524FD467A000CC850 /* Home Page */ = {
 			isa = PBXGroup;
 			children = (
-				876C7BF924FD470F000CC850 /* View Model */,
-				876C7BF824FD470A000CC850 /* View */,
-			);
-			name = "Home Page";
-			sourceTree = "<group>";
-		};
-		876C7BF824FD470A000CC850 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				876C7BF624FD4706000CC850 /* TabBarController.swift */,
 				876C7BFA24FD4778000CC850 /* Subpages */,
 			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		876C7BF924FD470F000CC850 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "View Model";
+			name = "Home Page";
 			sourceTree = "<group>";
 		};
 		876C7BFA24FD4778000CC850 /* Subpages */ = {
 			isa = PBXGroup;
 			children = (
+				874193E024FE73AC00F317E2 /* Conversation Page */,
 			);
 			name = Subpages;
 			sourceTree = "<group>";
@@ -211,12 +189,8 @@
 				8712954F24FD11E20071C958 /* SignUp Page */,
 				8712954D24FD098A0071C958 /* Auth Page */,
 				8712954624FD04A20071C958 /* Extensions */,
-				8712954524FD04830071C958 /* Resoures */,
-				874193DE24FE538200F317E2 /* DatabaseManager.swift */,
-				87C8366C24F2826D00E32EE6 /* AppDelegate.swift */,
-				87C8366E24F2826D00E32EE6 /* SceneDelegate.swift */,
-				87C8367224F2826D00E32EE6 /* Main.storyboard */,
-				87C8367724F2826F00E32EE6 /* LaunchScreen.storyboard */,
+				8712954524FD04830071C958 /* Resources */,
+				874193E124FE75AA00F317E2 /* Storyboards */,
 				87C8367A24F2826F00E32EE6 /* Info.plist */,
 				87C8368124F2832100E32EE6 /* GoogleService-Info.plist */,
 			);
@@ -360,6 +334,7 @@
 			files = (
 				87A0525524F2923E00E6812A /* AuthViewController.swift in Sources */,
 				8712955224FD12080071C958 /* SignUpViewController.swift in Sources */,
+				874193E524FE76A900F317E2 /* ConversationCollectionViewCell.swift in Sources */,
 				874193DF24FE538200F317E2 /* DatabaseManager.swift in Sources */,
 				8712954A24FD09580071C958 /* UITextField+Extension.swift in Sources */,
 				8712955824FD298E0071C958 /* SignUpViewModel.swift in Sources */,
@@ -367,6 +342,7 @@
 				87C8366D24F2826D00E32EE6 /* AppDelegate.swift in Sources */,
 				87C8366F24F2826D00E32EE6 /* SceneDelegate.swift in Sources */,
 				87A0525B24F3A37B00E6812A /* UIColor+Extension.swift in Sources */,
+				874193E324FE760400F317E2 /* ConversationViewController.swift in Sources */,
 				8712955524FD150C0071C958 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

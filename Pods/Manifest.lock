@@ -212,7 +212,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Alamofire (5.2.2)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -347,31 +346,39 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.4.0)
+  - InputBarAccessoryView (5.0.0):
+    - InputBarAccessoryView/Core (= 5.0.0)
+  - InputBarAccessoryView/Core (5.0.0)
+  - JGProgressHUD (2.1)
   - leveldb-library (1.22)
+  - MessageKit (3.2.0):
+    - InputBarAccessoryView (~> 5.0.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.10)
+  - SDWebImage (5.9.0):
+    - SDWebImage/Core (= 5.9.0)
+  - SDWebImage/Core (5.9.0)
   - SnapKit (5.0.1)
-  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/InAppMessaging
   - Firebase/Storage
+  - JGProgressHUD
+  - MessageKit
+  - SDWebImage (~> 5.0)
   - SnapKit (~> 5.0.0)
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - abseil
-    - Alamofire
     - BoringSSL-GRPC
     - Firebase
     - FirebaseABTesting
@@ -390,15 +397,17 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - InputBarAccessoryView
+    - JGProgressHUD
     - leveldb-library
+    - MessageKit
     - nanopb
     - PromisesObjC
+    - SDWebImage
     - SnapKit
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: 210f41ca352067d83b1ba4fd2e7fb49a0c017397
   FirebaseABTesting: 8a9d8df3acc2b43f4a22014ddf9f601bca6af699
@@ -417,12 +426,15 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  InputBarAccessoryView: cbc0b2d9456058e1166898897865f9f4960fac81
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MessageKit: 788199a27809d677ec35f9c6e7797e9f6fa538c5
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b6933fc00b82f42a3929b315ce4c44cf5ba406d1
+PODFILE CHECKSUM: fa43d95e7d84c9dfbedb3d93eb4b28b4cb8e836d
 
 COCOAPODS: 1.9.3

@@ -12,7 +12,8 @@ target 'Plumbus' do
     pod 'Firebase/Analytics'
     pod 'Firebase/InAppMessaging'
     pod 'Firebase/Firestore'
-    pod 'SwiftyJSON', '~> 4.0'
     pod 'SnapKit', '~> 5.0.0'
-    pod 'Alamofire', '~> 5.2'
+    pod 'MessageKit'
+    pod 'JGProgressHUD'
+    pod 'SDWebImage', '~> 5.0'    
 end
