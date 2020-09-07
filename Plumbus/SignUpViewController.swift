@@ -247,7 +247,11 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: SignUpViewModelDelegate {
-    func goToHomePage() {
+    func goToHomePage(email: String, name: String) {
+        
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(name, forKey: "name")
+        
         navigationController?.dismiss(animated: true, completion: nil)
     }
     

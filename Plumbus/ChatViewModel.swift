@@ -6,11 +6,19 @@
 //  Copyright © 2020 Kenes Yerassyl. All rights reserved.
 //
 
+import MessageKit
+
 class ChatViewModel {
     var messages = [Message]()
-    var sender = Sender(photoURL: "", senderId: "1", displayName: "Kenes Yerassyl")
+    var sender = Sender(
+        photoURL: "",
+        senderId: UserDefaults.standard.value(forKey: "email") as? String ?? "",
+        displayName: UserDefaults.standard.value(forKey: "name") as? String ?? ""
+    )
     
-    func getSender() -> Sender { return sender }
+    func getSender() -> SenderType {
+        return sender
+    }
     
     func getNumberOfMessages() -> Int { return messages.count }
     

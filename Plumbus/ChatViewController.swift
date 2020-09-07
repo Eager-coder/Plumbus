@@ -7,12 +7,24 @@
 //
 
 import MessageKit
-
+import InputBarAccessoryView
 
 
 class ChatViewController: MessagesViewController {
     
+    public var isNewConversation = false
+    public var otherUserEmail: String
+    
     private let vm = ChatViewModel()
+    
+    init(with email: String) {
+        self.otherUserEmail = email
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +47,20 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
+        messageInputBar.delegate = self
     }
     
+}
+
+extension ChatViewController: InputBarAccessoryViewDelegate {
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        guard !text.replacingOccurrences(of: " ", with: "").isEmpty else { return }
+        if isNewConversation {
+            // create in DB
+        } else {
+            // append existing one
+        }
+    }
 }
 
 extension ChatViewController: MessagesDataSource, MessagesDisplayDelegate, MessagesLayoutDelegate {

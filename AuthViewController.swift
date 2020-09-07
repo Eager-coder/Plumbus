@@ -207,6 +207,7 @@ class AuthViewController: UIViewController{
         if let errorMessage = authVM.validate([emailTextField.text, passwordTextField.text]) {
             // TODO: show error
         } else {
+            print("1")
             authVM.signInButtonClicked([
                 emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines),
                 passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -224,7 +225,9 @@ extension AuthViewController: AuthViewModelDelegate {
         spinner.dismiss(animated: true)
     }
     
-    func goToHomePage() {
+    func goToHomePage(email: String, name: String) {
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(name, forKey: "name")
         navigationController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 protocol SignUpViewModelDelegate: class {
-    func goToHomePage()
+    func goToHomePage(email: String, name: String)
     func loadingBegin()
     func loadingEnd()
 }
@@ -32,7 +32,13 @@ class SignUpViewModel {
     
     func signUpButtonClicked(_ fields: [String]) {
         
-        let user = User(firstName: fields[0], lastName: fields[1], email: fields[2], password: fields[3])
+        let user = User(
+            firstName: fields[0],
+            lastName: fields[1],
+            email: fields[2],
+            password: fields[3],
+            profileImageURL: nil
+        )
         delegate?.loadingBegin()
         
         guard !DatabaseManager.doesUserExist(with: user.email) else {
@@ -46,7 +52,7 @@ class SignUpViewModel {
                 print("Error in creating user: \(error.localizedDescription)")
             } else
             if result != nil && DatabaseManager.addUser(with: user.email, user: user) {
-                DispatchQueue.main.async { self?.delegate?.goToHomePage() }
+                DispatchQueue.main.async { self?.delegate?.goToHomePage(email: fields[2], name: "\(fields[0]) \(fields[1])") }
             }
         }
     }

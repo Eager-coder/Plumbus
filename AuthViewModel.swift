@@ -9,7 +9,7 @@
 import FirebaseAuth
 
 protocol AuthViewModelDelegate: class {
-    func goToHomePage()
+    func goToHomePage(email: String, name: String)
     func loadingBegin()
     func loadingEnd()
 }
@@ -30,7 +30,6 @@ class AuthViewModel {
         self.delegate?.loadingBegin()
         Auth.auth().signIn(withEmail: fields[0], password: fields[1]) { [weak self] (result, error) in
             guard let self = self else { return }
-            
             DispatchQueue.main.async {
                 self.delegate?.loadingEnd()
             }
@@ -38,7 +37,7 @@ class AuthViewModel {
             if let error = error {
                 print("Error in signing in: \(error.localizedDescription)")
             } else {
-                self.delegate?.goToHomePage()
+                self.delegate?.goToHomePage(email: fields[0], name: fields[1])
             }
         }
     }

@@ -31,7 +31,6 @@ class ConversationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateCollectionView()
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -64,9 +63,7 @@ extension ConversationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let vc = ChatViewController()
-        vc.navigationItem.title = "Kenes Yerassyl"
-        navigationController?.pushViewController(vc, animated: true)
+        //TODO
     }
 }
 
