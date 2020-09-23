@@ -33,19 +33,22 @@ class Users {
                 guard let querySnapshot = querySnapshot else { return }
                 users.removeAll()
                 for item in querySnapshot.documents {
-                    guard let email = item.get("email") as? String else { continue }
-                    DatabaseManager.db.collection("users").document(email).getDocument { (documentSnapshot, error) in
-                        let result = Result {
-                            try documentSnapshot?.data(as: User.self)
-                        }
-                        switch result {
-                        case .success(let user):
-                            guard let user = user else { return }
-                            users.append(user)
-                        case .failure(let error):
-                            print("Error in getting document: \(error.localizedDescription)")
-                        }
+                    guard
+                        let firstName = item["first_name"] as? String,
+                        let lastName = item["last_name"] as? String,
+                        let email = item["email"] as? String,
+                        let password = item["password"] as? String,
+                        let profileImageURL = item["profile_image"] as? String?
+                    else {
+                        continue
                     }
+                    users.append(User(
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password,
+                        profileImageURL: profileImageURL
+                    ))
                 }
             }
         }
